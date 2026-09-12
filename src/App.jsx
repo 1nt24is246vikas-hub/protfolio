@@ -38,7 +38,7 @@ const snapshot = [
 
 const skills = [
   { title: 'Programming Languages', icon: Code2, items: ['C', 'C++', 'Python'], tone: 'cyan' },
-  { title: 'Technical Areas', icon: BrainCircuit, items: ['Data Structures & Algorithms', 'Software Engineering', 'Artificial Intelligence'], tone: 'violet' },
+  { title: 'Technical Areas', icon: BrainCircuit, items: ['Data Structures & Algorithms', 'Software Engineering', 'Artificial Intelligence', 'Computer Networks'], tone: 'violet' },
   { title: 'Soft Skills', icon: Users, items: ['Project Management', 'Team Leadership', 'Critical Thinking', 'Attention to Detail', 'Coordination'], tone: 'gold' },
   { title: 'Languages', icon: MessageCircle, items: ['English', 'Kannada'], tone: 'rose' },
 ]
