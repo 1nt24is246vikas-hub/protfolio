@@ -38,7 +38,7 @@ const snapshot = [
 
 const skills = [
   { title: 'Programming Languages', icon: Code2, items: ['C', 'C++', 'Python'], tone: 'cyan' },
-  { title: 'Technical Areas', icon: BrainCircuit, items: ['Data Structures & Algorithms', 'Software Engineering', 'Artificial Intelligence', 'Computer Networks'], tone: 'violet' },
+  { title: 'Technical Areas', icon: BrainCircuit, items: ['Data Structures & Algorithms', 'Daily LeetCode problem solving', 'Software Engineering', 'Artificial Intelligence', 'Computer Networks'], tone: 'violet' },
   { title: 'Soft Skills', icon: Users, items: ['Project Management', 'Team Leadership', 'Critical Thinking', 'Attention to Detail', 'Coordination'], tone: 'gold' },
   { title: 'Languages', icon: MessageCircle, items: ['English', 'Kannada'], tone: 'rose' },
 ]
@@ -149,12 +149,12 @@ function App() {
             <p className="hero-kicker">Information Science & Engineering student <span>·</span> aspiring software engineer <span>·</span> AI enthusiast</p>
             <h1><LetterReveal>Hi, I'm Vikas Patel KR</LetterReveal><br /><span><LetterReveal startDelay={3900}>Aspiring software Engineer.</LetterReveal></span></h1>
             <p className="hero-intro">Passionate about programming, problem solving, software engineering and Artificial Intelligence.</p>
-            <p className="hero-tagline">Building my skills. Solving problems. Creating with technology.</p>
+            <p className="hero-tagline">Building my skills. Solving problems daily. Creating with technology.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">View my projects <ArrowUpRight size={17} /></a>
               <a className="button button-quiet" href="#resume">Download resume <Download size={16} /></a>
             </div>
-            <div className="hero-socials"><a href="#github">GitHub</a><a href="#linkedin">LinkedIn</a><a href="#leetcode">LeetCode</a><a href="mailto:vikaspatelkr.12@gmail.com">Email</a></div>
+            <div className="hero-socials"><a href="#github">GitHub</a><a href="#linkedin">LinkedIn</a><a href="https://leetcode.com/u/VIKAS_PATEL12/" target="_blank" rel="noreferrer">LeetCode</a><a href="mailto:vikaspatelkr.12@gmail.com">Email</a></div>
           </div>
           <div className="hero-visual" aria-label="Profile photo placeholder">
             <div className="orbit orbit-one" />
@@ -241,7 +241,7 @@ function App() {
         <section className="resume-cta page-section" id="resume"><div><span className="eyebrow">07 / Resume</span><h2>Want to know more about me?</h2><p>Download my resume to explore my education, skills, projects and certifications.</p></div><a className="button button-primary" href="#resume-download"><Download size={17} /> Download resume</a></section>
 
         <section className="contact page-section" id="contact">
-          <div className="contact-copy"><SectionHeading eyebrow="08 / Get in touch" title={<>Let's make<br /><em>something meaningful.</em></>}><span>Whether it is an idea, an opportunity, or simply a conversation about technology, I would be happy to hear from you.</span></SectionHeading><div className="contact-details"><a href="mailto:vikaspatelkr.12@gmail.com"><Mail size={18} /> vikaspatelkr.12@gmail.com</a><a href="tel:+919008032157"><Phone size={18} /> +91 9008032157</a><span><MapPin size={18} /> Tumkur, Karnataka</span></div><div className="social-links"><a href="#linkedin" aria-label="LinkedIn placeholder"><BriefcaseBusiness size={18} /></a><a href="#github" aria-label="GitHub placeholder"><GitBranch size={18} /></a><a href="#leetcode" aria-label="LeetCode placeholder"><Code2 size={18} /></a></div></div>
+          <div className="contact-copy"><SectionHeading eyebrow="08 / Get in touch" title={<>Let's make<br /><em>something meaningful.</em></>}><span>Whether it is an idea, an opportunity, or simply a conversation about technology, I would be happy to hear from you.</span></SectionHeading><div className="contact-details"><a href="mailto:vikaspatelkr.12@gmail.com"><Mail size={18} /> vikaspatelkr.12@gmail.com</a><a href="tel:+919008032157"><Phone size={18} /> +91 9008032157</a><span><MapPin size={18} /> Tumkur, Karnataka</span></div><div className="social-links"><a href="#linkedin" aria-label="LinkedIn placeholder"><BriefcaseBusiness size={18} /></a><a href="#github" aria-label="GitHub placeholder"><GitBranch size={18} /></a><a href="https://leetcode.com/u/VIKAS_PATEL12/" aria-label="LeetCode profile" target="_blank" rel="noreferrer"><Code2 size={18} /></a></div></div>
           <form className="contact-form" onSubmit={handleSubmit}><label>Name<input name="name" placeholder="Your name" required /></label><label>Email<input name="email" type="email" placeholder="you@example.com" required /></label><label>Message<textarea name="message" placeholder="Tell me a little about it..." rows="4" required /></label><button className="button button-primary" type="submit">{submitted ? 'Message ready' : 'Send message'} <Send size={16} /></button>{submitted && <p className="form-note">Thanks. This form is a placeholder and is ready to connect to a backend.</p>}</form>
         </section>
       </main>
