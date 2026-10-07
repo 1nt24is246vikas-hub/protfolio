@@ -26,6 +26,7 @@ import {
   Users,
   X,
 } from 'lucide-react'
+import TalkingAvatarExperience from './TalkingAvatarExperience.jsx'
 
 const navItems = ['About', 'Skills', 'Experience', 'Projects', 'Education', 'Certifications', 'Resume', 'Contact']
 
@@ -71,7 +72,33 @@ function SectionHeading({ eyebrow, title, children }) {
   )
 }
 
-function LetterReveal({ children, className = '', startDelay = 0 }) {
+function LetterReveal({ children, className = '', startDelay = 0, wrap = false }) {
+  let characterIndex = 0
+
+  if (wrap) {
+    return (
+      <span className={`letter-reveal letter-reveal-wrap ${className}`} aria-label={children}>
+        {children.split(/(\s+)/).map((part, partIndex) => (
+          /^\s+$/.test(part)
+            ? part
+            : (
+              <span className="letter-word" key={`${part}-${partIndex}`}>
+                {part.split('').map((letter) => {
+                  const delay = startDelay + characterIndex * 160
+                  characterIndex += 1
+                  return (
+                    <span aria-hidden="true" style={{ '--letter-delay': `${delay}ms` }} key={`${letter}-${characterIndex}`}>
+                      {letter}
+                    </span>
+                  )
+                })}
+              </span>
+            )
+        ))}
+      </span>
+    )
+  }
+
   return (
     <span className={`letter-reveal ${className}`} aria-label={children}>
       {children.split('').map((letter, index) => (
@@ -147,7 +174,7 @@ function App() {
           <div className="hero-copy">
             <div className="status-pill"><span className="status-dot" /> Open to learning and opportunities</div>
             <p className="hero-kicker">Information Science & Engineering student <span>·</span> aspiring software engineer <span>·</span> AI enthusiast</p>
-            <h1><LetterReveal>Hi, I'm Vikas Patel KR</LetterReveal><br /><span><LetterReveal startDelay={3900}>Aspiring software Engineer.</LetterReveal></span></h1>
+            <h1><LetterReveal wrap>Hi, I'm Vikas Patel KR</LetterReveal><br /><span><LetterReveal wrap startDelay={3900}>Aspiring software Engineer.</LetterReveal></span></h1>
             <p className="hero-intro">Passionate about programming, problem solving, software engineering and Artificial Intelligence.</p>
             <p className="hero-tagline">Building my skills. Solving problems daily. Creating with technology.</p>
             <div className="hero-actions">
@@ -156,12 +183,10 @@ function App() {
             </div>
             <div className="hero-socials"><a href="#github">GitHub</a><a href="#linkedin">LinkedIn</a><a href="https://leetcode.com/u/VIKAS_PATEL12/" target="_blank" rel="noreferrer">LeetCode</a><a href="mailto:vikaspatelkr.12@gmail.com">Email</a></div>
           </div>
-          <div className="hero-visual" aria-label="Profile photo placeholder">
+          <div className="hero-visual" aria-label="Interactive portfolio introduction">
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
-            <div className="profile-placeholder">
-              <img src="/profile.jpg" alt="Vikas Patel KR" />
-            </div>
+            <TalkingAvatarExperience />
             <div className="float-card float-card-top"><Sparkles size={16} /><span>Curious<br /><b>by nature</b></span></div>
             <div className="float-card float-card-bottom"><Target size={16} /><span>Learning with<br /><b>intention</b></span></div>
           </div>
